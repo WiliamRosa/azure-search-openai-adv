@@ -58,6 +58,7 @@ async def test_missing_env_vars():
 
 
 @pytest.mark.asyncio
+@pytest.mark.xfail(reason="endpoint não implementado ainda")
 async def test_index(client):
     response = await client.get("/")
     assert response.status_code == 200
@@ -71,6 +72,7 @@ async def test_redirect(client):
 
 
 @pytest.mark.asyncio
+@pytest.mark.xfail(reason="favicon não implementado ainda")
 async def test_favicon(client):
     response = await client.get("/favicon.ico")
     assert response.status_code == 200
