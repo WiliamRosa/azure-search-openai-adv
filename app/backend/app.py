@@ -100,7 +100,11 @@ from prepdocs import (
 from prepdocslib.filestrategy import UploadUserFileStrategy
 from prepdocslib.listfilestrategy import File
 
-bp = Blueprint("routes", __name__, static_folder="static")
+from pathlib import Path
+
+static_path = Path(__file__).resolve().parent / "static"
+bp = Blueprint("routes", __name__, static_folder=str(static_path))
+
 # Fix Windows registry issue with mimetypes
 mimetypes.add_type("application/javascript", ".js")
 mimetypes.add_type("text/css", ".css")
