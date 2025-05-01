@@ -100,8 +100,6 @@ from prepdocs import (
 from prepdocslib.filestrategy import UploadUserFileStrategy
 from prepdocslib.listfilestrategy import File
 
-from pathlib import Path
-
 static_path = Path(__file__).resolve().parent / "static"
 bp = Blueprint("routes", __name__, static_folder=str(static_path))
 
