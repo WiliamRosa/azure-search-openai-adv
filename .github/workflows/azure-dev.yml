@@ -130,6 +130,9 @@ jobs:
       - name: Init environment
         run: azd init --environment dev --no-prompt
 
+      - name: Debug env
+        run: echo "AZURE_USE_AUTHENTICATION=$AZURE_USE_AUTHENTICATION"
+
       - name: Provision Infrastructure
         run: azd provision --no-prompt
         env:
